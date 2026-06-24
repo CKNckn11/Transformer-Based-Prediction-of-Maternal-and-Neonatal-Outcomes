@@ -16,6 +16,23 @@ The GWAS analysis in this project was performed with reference to the lightweigh
 
 This referenced workflow provides a reproducible framework for organizing GWAS input files, running association analysis, and generating downstream visualization-ready results. In the present project, GWAS-derived variants were further integrated with maternal clinical and laboratory features for transformer-based risk prediction.
 
+### cfDNA GWAS Pipeline Generator
+
+This tool is designed to generate reproducible analysis scripts rather than directly execute all jobs inside Python. After generation, each shell script can be submitted, checked, modified, or rerun independently on a local server or computing cluster.
+
+```bash
+$ python generate_pipeline.py -h
+usage: cfdna-gwas-generate [-h] [-v] --config CONFIG [--outdir OUTDIR]
+
+cfDNA GWAS Pipeline Generator (Version = 0.1.0): Generate cfDNA germline GWAS shell scripts from a YAML config.
+
+optional arguments:
+  -h, --help       show this help message and exit
+  -v, --version    show the version of cfdna-gwas-generate and exit.
+  --config CONFIG  YAML config file.
+  --outdir OUTDIR  Override project.outdir from the YAML config.
+```
+
 ## Code Organization
 
 The analysis scripts are organized by figure under the `Code/` directory:
